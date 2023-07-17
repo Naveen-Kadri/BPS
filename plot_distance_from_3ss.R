@@ -3,9 +3,6 @@ in_file  <- snakemake@input[["in_file"]]
 plot_file  <- snakemake@output[["plot_file"]]
 
 
-##in_file  <- "/cluster/work/pausch/naveen/CNS/BPS/BPSII/scPPT/RUN5/MUTATION/NEW/allinfo_mutation_count.txt"
-##plot_file  <- "/cluster/work/pausch/naveen/CNS/BPS/BPSII/scPPT/RUN5/NEW/distance_from_3ss.pdf"
-
 inf <- read.table (in_file, head=T)
 ##pdf ('distance_from_3ss.pdf', height=6,width=8)
 pdf (plot_file, height=6,width=8)
@@ -27,8 +24,6 @@ can$counts  <- 100*can$counts/sum (can$counts)
 noncan <- inf [inf$type=="noncanonical",]
 noncan <- hist (noncan$bp_pos, breaks=myseq, plot=F)
 noncan$counts  <- 100*noncan$counts/sum (noncan$counts)
-#cols  <- c('indianred2', 'darkseagreen')
-#cols  <- c('#5A76A5', '#A5895A')
 cols  <- c('darkseagreen', 'indianred2')
 par (new =T )
 plot (can, col=cols[1],xlab='',ylab='',main='',ylim=ylims,las=1, border="whitesmoke")
