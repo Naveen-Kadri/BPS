@@ -3,15 +3,7 @@ some additional checks --
 writes a file with anchor at one bp upstream of the bps [7bps]
 this eases visulisation of mutation load  [and others]
 T at pos 4 and A at pos 6
-
-
 '''
-# res_file = "/cluster/work/pausch/naveen/CNS/BPS/BPSII/CHR1/bpp_res.txt"
-# seq_file="/cluster/work/pausch/naveen/CNS/BPS/BPSII/CHR1/seq.txt"
-# fasta_file="/cluster/work/pausch/naveen/CNS/REFFASTA/chr1.fa"
-# out_file="todel.txt"
-# out =open (out_file, "w")
-
 
 res_file = snakemake.input.res_file
 seq_file= snakemake.input.seq_file
