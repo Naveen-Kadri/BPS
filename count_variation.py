@@ -12,23 +12,12 @@ from collections import defaultdict
 def reverse_complement(seq):
     comp={"A":"T", "T":"A", "C":"G", "G":"C", "N":"N", ",":","}
     return ("".join ([comp.get (el, "N") for el in seq]))
-    ##return "".join([comp.get (base,"N") for base in seq[::-1]])
-
-
 
 position_file=snakemake.input.position_file
 frq_file=snakemake.input.frq_file
 count_out_file=snakemake.output.count_file
 type_out_file=snakemake.output.type_file
 myrange=snakemake.params.myrange
-
-
-
-# position_file="/cluster/work/pausch/naveen/CNS/BPS/BPSII/scPPT/RUN/CHR1/feature.txt"
-# frq_file="/cluster/work/pausch/naveen/CNS/GENOME2/FRQ/NEW/CHR1/my.frq"
-# count_out_file="test_mutation.txt"
-# type_out_file="test_mutation_type.txt"
-# myrange=[-51,21]
 
 
 ##frequency and allele information
